@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.documentation_url = 'http://doc.talkingdata.com/posts/20'
   s.authors = { 'TalkingData' => 'https://www.talkingdata.com' }
   s.license = { :type => 'Copyright', :text => 'LICENSE Copyright Beijing Tendcloud Tianxia Technology Co., Ltd. All rights reserved.' }
-  s.source = { :git => 'https://github.com/ElfSundae/TalkingDataSDK-AppAnalytics.git', :tag => s.version.to_s, :submodules => true }
+  s.source = { :git => 'https://github.com/ElfSundae/TalkingDataSDK-AppAnalytics.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'TalkingData.h'
