@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'TalkingDataSDK-AppAnalytics'
   s.version = '4.0.33'
-  s.summary = 'TalkingData AppAnalytics SDK.'
+  s.summary = 'TalkingData App Analytics 基础功能 SDK'
   s.homepage = 'https://github.com/ElfSundae/TalkingDataSDK-AppAnalytics'
   s.documentation_url = 'http://doc.talkingdata.com/posts/20'
   s.authors = { 'TalkingData' => 'https://www.talkingdata.com' }
