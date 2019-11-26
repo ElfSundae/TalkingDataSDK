@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:tap];
+    
     self.subject.text = [NSString stringWithFormat:@"　%@", _info[@"title"]];
     self.icon.image = [UIImage imageNamed:_info[@"name"]];
     self.detail.text = _info[@"detail"];
@@ -37,42 +40,8 @@
     self.customize.hidden = selected;
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(nullable id)sender {
-    CGFloat sysVersion = [UIDevice currentDevice].systemVersion.floatValue;
-    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *viewController = nil;
-    if (sysVersion >= 8.0f) {
-        return YES;
-    } else if ([identifier isEqualToString:@"segueAppBaseInterface"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"App-BaseInterface"];
-    } else if ([identifier isEqualToString:@"segueAppPageFirst"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"App-PageFirst"];
-    } else if ([identifier isEqualToString:@"segueAppPageSecond"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"App-PageSecond"];
-    } else if ([identifier isEqualToString:@"segueGameBaseInterface"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"Game-BaseInterface"];
-    } else if ([identifier isEqualToString:@"segueTrackingBaseInterface"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"Tracking-BaseInterface"];
-    } else if ([identifier isEqualToString:@"segueEAuthAuth"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"eAuth-Auth"];
-    } else if ([identifier isEqualToString:@"segueEAuthCheck"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"eAuth-Check"];
-    } else if ([identifier isEqualToString:@"segueEAuthMatch"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"eAuth-Match"];
-    } else if ([identifier isEqualToString:@"segueEAuthUnbind"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"eAuth-Unbind"];
-    } else if ([identifier isEqualToString:@"segueBrandGrowDisplay"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BrandGrowth-Display"];
-    } else if ([identifier isEqualToString:@"segueBrandGrowClick"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BrandGrowth-Click"];
-    } else if ([identifier isEqualToString:@"segueBrandGrowShow"]) {
-        viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"BrandGrowth-Show"];
-    }
-    if (viewController) {
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
-    
-    return NO;
+- (void)tap:(id)sender{
+    [self.view endEditing:YES];
 }
 
 - (IBAction)reapply:(UIButton *)sender {

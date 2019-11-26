@@ -24,7 +24,7 @@ static NSString *headerIdentifier = @"Header";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *path = [[NSBundle mainBundle].bundlePath stringByAppendingPathComponent:@"Data.plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"FunData" ofType:@"plist"];
     self.items = [NSArray arrayWithContentsOfFile:path];
 }
 
@@ -89,7 +89,9 @@ static NSString *headerIdentifier = @"Header";
     } @catch (NSException *exception) {
         viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"TalkingData-General"];
     }
-    viewController.info = function;
+    if ([viewController respondsToSelector:@selector(setInfo:)]) {
+        viewController.info = function;
+    }
     viewController.navigationItem.title = [NSString stringWithFormat:@"%@ %@", productName, functionTitle];
     [self.navigationController pushViewController:viewController animated:YES];
 }

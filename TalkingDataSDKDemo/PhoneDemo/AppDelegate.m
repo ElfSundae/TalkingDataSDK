@@ -20,9 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
     NSString *appAnalyticsAppId = @"DE40FB8A722D454B8981E2F842E6AAB6";
     NSString *appAnalyticsChannelId = @"AppStore";
+    [TalkingData backgroundSessionEnabled];
     [TalkingData sessionStarted:appAnalyticsAppId withChannelId:appAnalyticsChannelId];
     
     
@@ -43,12 +45,26 @@
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"Update location:%@", locations);
+    NSLog(@"TalkingData: Update location:%@", locations);
 }
 
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"TalkingData: openURL:%@", url);
+    
+    return YES;
+}
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"TalkingData: openURL:%@", url);
+    
+    return YES;
+}
 
-
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    NSLog(@"TalkingData: openURL:%@", url);
+    
+    return YES;
+}
 
 @end

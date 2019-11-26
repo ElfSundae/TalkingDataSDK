@@ -70,7 +70,7 @@
     return 0;
 }
 
-#pragma mark Picker Delegate Methods
+#pragma mark - Picker view delegate methods
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     switch (pickerView.tag) {
