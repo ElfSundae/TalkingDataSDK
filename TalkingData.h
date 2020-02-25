@@ -105,6 +105,13 @@ typedef enum {
 
 
 
+/**
+ *  @method setAccountId:
+ *  设置帐户ID
+ *  @param  accountId   账户ID
+ */
++ (void)setAccountId:(NSString *)accountId API_DEPRECATED("", ios(1, 1));
+
 #if TARGET_OS_IOS
 /**
  *  @method onRegister  注册
