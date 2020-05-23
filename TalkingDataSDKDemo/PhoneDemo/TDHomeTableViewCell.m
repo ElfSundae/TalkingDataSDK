@@ -13,30 +13,30 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.selectImage.translatesAutoresizingMaskIntoConstraints = NO;
+    self.selectLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSLayoutConstraint *top =       [NSLayoutConstraint constraintWithItem:self.selectImage
+    NSLayoutConstraint *top =       [NSLayoutConstraint constraintWithItem:self.selectLabel
                                                                  attribute:NSLayoutAttributeTop
                                                                  relatedBy:NSLayoutRelationEqual
                                                                     toItem:self.textLabel
                                                                  attribute:NSLayoutAttributeTop
                                                                 multiplier:1
                                                                   constant:0];
-    NSLayoutConstraint *right =     [NSLayoutConstraint constraintWithItem:self.selectImage
+    NSLayoutConstraint *right =     [NSLayoutConstraint constraintWithItem:self.selectLabel
                                                                  attribute:NSLayoutAttributeRight
                                                                  relatedBy:NSLayoutRelationEqual
                                                                     toItem:self.contentView
                                                                  attribute:NSLayoutAttributeRight
                                                                 multiplier:1
                                                                   constant:-8];
-    NSLayoutConstraint *width =     [NSLayoutConstraint constraintWithItem:self.selectImage
+    NSLayoutConstraint *width =     [NSLayoutConstraint constraintWithItem:self.selectLabel
                                                                  attribute:NSLayoutAttributeWidth
                                                                  relatedBy:NSLayoutRelationEqual
                                                                     toItem:self.textLabel
                                                                  attribute:NSLayoutAttributeHeight
                                                                 multiplier:1
                                                                   constant:0];
-    NSLayoutConstraint *height =    [NSLayoutConstraint constraintWithItem:self.selectImage
+    NSLayoutConstraint *height =    [NSLayoutConstraint constraintWithItem:self.selectLabel
                                                                  attribute:NSLayoutAttributeHeight
                                                                  relatedBy:NSLayoutRelationEqual
                                                                     toItem:self.textLabel

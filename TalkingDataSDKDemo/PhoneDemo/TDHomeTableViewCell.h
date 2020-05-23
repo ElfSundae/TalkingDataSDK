@@ -10,6 +10,6 @@
 
 @interface TDHomeTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *selectImage;
+@property (nonatomic, weak) IBOutlet UILabel *selectLabel;
 
 @end

@@ -38,6 +38,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
+    ((UITableViewHeaderFooterView *)view).backgroundView = [[UIView alloc] init];
     ((UITableViewHeaderFooterView *)view).backgroundView.backgroundColor = [UIColor clearColor];
 }
 

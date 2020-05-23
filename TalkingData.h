@@ -33,12 +33,6 @@ typedef NS_ENUM(NSUInteger, TDAccountType) {
 
 
 
-// 以下枚举用于WatchApp页面追踪
-typedef enum {
-    TDPageTypeGlance = 1,
-    TDPageTypeNotification = 2,
-    TDPageTypeWatchApp = 3
-} TDPageType;
 
 @interface TalkingData: NSObject
 

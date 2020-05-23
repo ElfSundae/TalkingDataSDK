@@ -51,16 +51,12 @@ static NSString *headerIdentifier = @"Header";
     cell.textLabel.text = item[@"title"];
     cell.detailTextLabel.text = item[@"subtitle"];
     cell.detailTextLabel.numberOfLines = 2;
-    cell.selectImage.highlighted = [item[@"selected"] boolValue];
+    cell.selectLabel.text = [item[@"selected"] boolValue] ? @"☑︎" : @"□";
     
     return cell;
 }
 
 #pragma mark - Table view delegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 28;
-}
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
@@ -78,7 +74,6 @@ static NSString *headerIdentifier = @"Header";
     NSString *productName = product[@"name"];
     NSArray *functions = product[@"functions"];
     NSDictionary *function = functions[indexPath.row];
-    NSString *functionTitle = function[@"title"];
     NSString *functionName = function[@"name"];
     NSString *identifier = [NSString stringWithFormat:@"%@-%@", productName, functionName];
     
@@ -92,7 +87,7 @@ static NSString *headerIdentifier = @"Header";
     if ([viewController respondsToSelector:@selector(setInfo:)]) {
         viewController.info = function;
     }
-    viewController.navigationItem.title = [NSString stringWithFormat:@"%@ %@", productName, functionTitle];
+    viewController.navigationItem.title = productName;
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
