@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TalkingDataSDK-AppAnalytics'
-  s.version = '4.0.46'
+  s.version = '4.0.50'
   s.summary = 'TalkingData App Analytics 基础功能 SDK'
   s.homepage = 'https://github.com/ElfSundae/TalkingDataSDK-AppAnalytics'
   s.documentation_url = 'http://doc.talkingdata.com/posts/20'
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/ElfSundae/TalkingDataSDK-AppAnalytics.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
-  s.source_files = 'TalkingData.h'
-  s.vendored_libraries = 'libTalkingData.a'
+  s.source_files = 'SDK/TalkingData.h', 'Source/*.{h,m}'
+  s.vendored_libraries = 'SDK/libTalkingData.a'
   s.frameworks = 'AdSupport', 'CoreTelephony', 'CoreMotion', 'Security', 'SystemConfiguration'
   s.libraries = 'z', 'c++'
 end

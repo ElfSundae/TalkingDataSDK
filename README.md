@@ -8,3 +8,11 @@ pod 'TalkingDataSDK-AppAnalytics'
 
 - Documentation: http://doc.talkingdata.com/posts/20
 - Download SDK: http://doc.talkingdata.com/posts/58
+
+### Example
+
+```objc
+#import <TalkingDataSDK-AppAnalytics/UIDevice+TalkingDataExtension.h>
+
+NSString *UDID = [UIDevice.currentDevice talkingDataDeviceIdentifier];
+```

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "UIDevice+TalkingDataExtension.h"
+#import <TalkingDataSDK-AppAnalytics/UIDevice+TalkingDataExtension.h>
 
 @implementation AppDelegate
 
